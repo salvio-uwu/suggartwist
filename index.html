@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A & Z Sugar Twist</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Fuentes y Estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Lightbox CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --rosa-claro: #ffcce7;
+            --rosa: #f78fb3;
+            --lila: #d3c0f9;
+            --menta: #baf3db;
+            --texto: #4a4a4a;
+            --txt: #666666;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(to right, var(--menta), var(--lila));
+            color: var(--texto);
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Pacifico', cursive;
+            color: var(--rosa);
+            text-align: center;
+
+        }
+
+        h4 {
+            font-family: 'Pacifico', cursive;
+            color: var(--txt);
+            text-align: center;
+        }
+
+        .nosotros {
+            color: gray;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-brand {
+            font-family: 'Pacifico', cursive;
+            color: var(--rosa) !important;
+            font-size: 1.8rem;
+        }
+
+        .nav-link {
+            color: var(--texto) !important;
+            font-weight: bold;
+        }
+
+        .nav-link:hover {
+            color: var(--rosa) !important;
+        }
+
+        .masthead {
+            background-image: url('../alejandra/fullsize/bg-masthead.jpg');
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            animation: fadeIn 2s ease-in;
+        }
+
+        .masthead h1 {
+            font-size: 3rem;
+        }
+
+        .page-section {
+            padding: 4rem 2rem;
+        }
+
+        .carousel-inner img {
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 12px;
+
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            border-radius: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .filtro-galeria {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .filtro-btn {
+            background-color: var(--rosa);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.5rem;
+            border-radius: 2rem;
+            margin: 0.3rem;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .filtro-btn:hover {
+            background-color: var(--rosa-claro);
+            transform: scale(1.05);
+        }
+
+        .testimonios,
+        .precios,
+        .contacto {
+            padding: 1rem 1rem;
+        }
+
+        .precios1 {
+            text-align: center;
+        }
+
+        .testimonio,
+        .precio-item {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem auto;
+            max-width: 600px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .contacto form {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 700px;
+            margin: auto;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .contacto input,
+        .contacto textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #ccc;
+        }
+
+        .contacto button {
+            background-color: var(--rosa);
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contacto button:hover {
+            background-color: var(--rosa-claro);
+        }
+
+        .footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .social-icons a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            color: var(--rosa-principal);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Animaciones adicionales */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s, transform 1s;
+        }
+
+        .animate-on-scroll.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">A & Z Sugar Twist</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="masthead">
+        <div>
+            <h1>¡Made with love by !</h1>
+            <p>A & Z Sugar Twist</p>
+        </div>
+    </header>
+
+    <section id="about" class="page-section">
+        <div class="container">
+            <h2>A & Z</h2>
+            <p class="nosotros">"Transforming Spaces into Dreams" 🌟🏡
+                From small gatherings to grand events, we design unique decorations that reflect your style and make
+                every occasion unforgettable. 🎀 Add a magical touch to every occasion.
+                ¡ Turn your ideas into reality with us! ✨🎉</p>
+            <p class="nosotros">✨ Sweeten your day with our irresistible creations. From custom cakes to gourmet
+                desserts, every bite is made with love and the finest ingredients. Treat yourself! 🍰💖</P>
+
+
+        </div>
+    </section>
+
+    <section id="galeria" class="page-section">
+
+        <div class="container">
+            <h2>Galería de Postres</h2>
+
+            <div class="filtro-galeria">
+                <button class="filtro-btn" onclick="filtrar('todos')">Todos</button>
+                <button class="filtro-btn" onclick="filtrar('gelatinas')">Gelatinas</button>
+                <button class="filtro-btn" onclick="filtrar('postres')">Postres</button>
+                <button class="filtro-btn" onclick="filtrar('pasteles')">Pasteles</button>
+            </div>
+
+            <div class="gallery-grid">
+                <a href="img/gelansito.png" data-lightbox="gelatinas" data-title="Gelansito"><img
+                        src="img/gelansito.png" class="img-fluid categoria-gelatinas"></a>
+                <a href="img/gelatinademango.png" data-lightbox="gelatinas" data-title="Gelatina de Mango"><img
+                        src="img/gelatinademango.png" class="img-fluid categoria-gelatinas"></a>
+                <a href="img/gelatinafresasconcrema.png" data-lightbox="gelatinas"
+                    data-title="Gelatina fresas con crema"><img src="img/gelatinafresasconcrema.png"
+                        class="img-fluid categoria-gelatinas"></a>
+                <a href="img/gelatinamosaico.png" data-lightbox="gelatinas" data-title="Gelatina Mosaico"><img
+                        src="img/gelatinamosaico.png" class="img-fluid categoria-gelatinas"></a>
+                <a href="img/gelatinachamoy.png" data-lightbox="gelatinas" data-title="Gelatina Chamoy"><img
+                        src="img/gelatinachamoy.png" class="img-fluid categoria-gelatinas"></a>
+                 <a href="img/chessecake1.png" data-lightbox="postres" data-title="postres"><img
+                         src="img/chessecake1.png" class="img-fluid categoria-postres"></a>
+               <a href="img/pecanpie.png" data-lightbox="postres" data-title="postres"><img
+                    src="img/pecanpie.png" class="img-fluid categoria-postres"></a>
+
+                         
+                <a href="img/chessecake.png" data-lightbox="postres" data-title="postres"><img
+                        src="img/chessecake.png" class="img-fluid categoria-postres"></a>
+                <a href="img/chessecakefresas.png" data-lightbox="postres" data-title="postres"><img
+                        src="img/chessecakefresas.png" class="img-fluid categoria-postres"></a>
+                <a href="img/postre.png" data-lightbox="postres" data-title="postres"><img
+                        src="img/postre.png" class="img-fluid categoria-postres"></a>
+                 <a href="img/churrochassecake.png" data-lightbox="postres" data-title="postres"><img
+                         src="img/churrochassecake.png" class="img-fluid categoria-postres"></a>
+                <a href="img/fresasdibai.png" data-lightbox="postres" data-title="postres"><img
+                        src="img/fresasdibai.png" class="img-fluid categoria-postres"></a>
+
+
+                <a href="img/rollodemango.png" data-lightbox="pasteles" data-title="Pasteles"><img
+                        src="img/rollodemango.png" class="img-fluid categoria-pasteles"></a>
+                <a href="img/flancremoso.png" data-lightbox="pasteles" data-title="Pasteles"><img
+                        src="img/flancremoso.png" class="img-fluid categoria-pasteles"></a>
+
+                <!-- Agrega más imágenes con sus clases correspondientes -->
+
+
+            </div>
+        </div>
+        <!-- Carrusel -->
+        <div id="carouselGaleria" class="carousel slide container mb-5" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/decoracion2.png" class="d-block w-100" alt="decoracion">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/decoracion1.png" class="d-block w-100" alt="decoracion1">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/decoracion.png" class="d-block w-100" alt="decoracion2">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/decoracion4.png" class="d-block w-100" alt="decoracion3">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/decoracion5.png" class="d-block w-100" alt="decoracion4">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/decoracion6.png" class="d-block w-100" alt="decoracion5">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/decoracion7.png" class="d-block w-100" alt="decoracion6">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/decoracion8.png" class="d-block w-100" alt="decoracion7">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/decoracion5.png" class="d-block w-100" alt="decoracion8">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/decoracion7.png" class="d-block w-100" alt="decoracion9">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGaleria" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselGaleria" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+    </section>
+
+    <section class="testimonios">
+        <h2>Testimonios</h2>
+        <div class="testimonio">
+            <p>"Súper delicioso el rollo de mango."</p>
+            <h4>- Victor Carbajal.</h4>
+        </div>
+        <div class="testimonio">
+            <p>"Deliciosos postres sin duda súper recomendable."</p>
+            <h4>- Conchita Flores.</h4>
+        </div>
+        <div class="testimonio">
+            <p>"Estaán riquísimas 😋 % recomendadas 🫡."</p>
+            <h4>- Junior Martinez.</h4>
+        </div>
+    </section>
+
+    <section class="precios">
+        <h2>Precios</h2>
+        <div class="precio-item">
+            <h4>Pastel Rollo de Mango 🍰</h4>
+            <p class="precios1">$45</p>
+            <h4>Paquete de Churros Chessecake</h4>
+            <p class="precios1">$25 Docena</p>
+            <h4>Fresas Dibai (vaso 12 oz)</h4>
+            <p class="precios1">$10</p>
+        </div>
+        <div class="precio-item">
+            <h4>Decoración de Mesa Principal</h4>
+            <p class="precios">$120 </p>
+            <h4>Piñata de Bota Vaquera </h4>
+            <p class="precios">$130</p>
+            <h4>Realizamos piñatas personalizadas</h4>
+        </div>
+    </section>
+
+    <section id="contact" class="page-section contacto">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <form onsubmit="enviarCorreo(event)">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="E-Mail" required>
+                <input type="date" name="date" required>
+                <textarea name="message" placeholder="Message" rows="4" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>    
+      
+     <!-- Incluye el script de EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<script>
+  (function () {
+    emailjs.init("tDSpAUGc8SUoq3azS");  // Tu public key de EmailJS
+  })();
+
+  function enviarCorreo(event) {
+    event.preventDefault();
+    
+    // Enviar formulario a EmailJS
+    emailjs.sendForm('service_i4k6mtj', 'template_en3ywkq', event.target)
+      .then(function(response) {
+        alert('Tu mensaje ha sido enviado correctamente.');
+        document.querySelector('form').reset();
+      }, function(error) {
+        alert('Hubo un error al enviar el mensaje. Intenta nuevamente.');
+        console.error('Error de envío:', error);
+      });
+  }
+</script>   
+    
+
+    <footer class="footer">
+        <p>Copyright &copy; 2025 <a href="https://www.genessit.com/">GenessIT</a></p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/share/1C7WtFdfqE/"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@az.sugar.twist.ll?_t=ZM-8vOVhLcJ3N0&_r=1"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/+14698812229/"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <!-- JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
+
+    <script>
+        function filtrar(categoria) {
+            const imagenes = document.querySelectorAll('.gallery-grid a');
+            imagenes.forEach(img => {
+                const clases = img.querySelector('img').classList;
+                if (categoria === 'todos' || clases.contains(`categoria-${categoria}`)) {
+                    img.style.display = 'block';
+                } else {
+                    img.style.display = 'none';
+                }
+            });
+        }
+
+        function enviarCorreo(e) {
+            e.preventDefault();
+            alert("¡Mensaje enviado! Pronto te contactaremos.");
+        }
+
+
+    </script>
+</body>
+
+</html>
